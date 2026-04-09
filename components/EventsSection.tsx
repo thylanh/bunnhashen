@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { events } from '../utils/data';
 
@@ -7,7 +6,6 @@ export default function EventsSection() {
         <section id="events-section" className="w-full border-8 border-double border-vintage-brown/80 mt-6 relative bg-transparent rounded-3xl">
             {/* Inner Border container */}
             <div className="border-[3px] border-vintage-brown/80 p-6 pt-10 pb-8 bg-transparent relative rounded-2xl">
-                
                 {/* Header */}
                 <div className="flex flex-col items-center mb-10 relative ">
                     <span className="text-[#c62828] font-bold uppercase tracking-[0.2em] text-sm md:text-lg mb-1 drop-shadow-sm font-sans text-center">
@@ -37,8 +35,8 @@ export default function EventsSection() {
                             <p className="font-sans text-[15px] leading-relaxed font-medium line-clamp-3">
                                 {event.shortDesc}
                             </p>
-                            <Link href={`/events/${event.id}`} className="font-extrabold uppercase text-sm mt-auto hover:text-accent-red transition-colors flex items-center tracking-wider text-vintage-brown font-sans">
-                                ĐỌC TIẾP
+                            <Link href={`/events/${event.id}`} className="font-bold text-sm mt-auto hover:text-accent-red tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
+                                XEM TIẾP
                             </Link>
                         </div>
                     ))}

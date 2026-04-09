@@ -61,3 +61,16 @@ body {
   transform-origin: top center;
   animation: swing-smooth 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  animation: blink 1s infinite;
+  animation-delay: 1s; /* đợi 1s rồi mới nhấp nháy */
+}

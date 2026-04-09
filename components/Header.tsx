@@ -36,11 +36,11 @@ export default function Header() {
         <div className="relative border-4 border-vintage-brown p-4 pt-6 max-w-xs text-center bg-black/5" style={{ fontFamily: 'var(--font-mono)' }}>
           <div className="font-bold text-vintage-brown font-sans text-base mb-2">BÚN ĐẬU CHÚ BÉO<br/>BUN DAU MAM TOM & MORE</div>
           <div className="text-accent-red font-bold">******</div>
-          <div><span className="text-accent-red font-bold">Đia chi:</span> 144a Chi lang, phuong Phuoc Thang,TP. Ho Chi Minh</div>
+          <div><span className="text-accent-red font-bold">Đia chi:</span> 54 Nơ Trang Long, phường Rạch Dừa, TP. Hồ Chí Minh</div>
           <div className="text-accent-red font-bold">******</div>
-          <div><span className="text-accent-red font-bold">Đien thoai:</span> 0856620789</div>
+          <div><span className="text-accent-red font-bold">Đien thoai:</span> 0332215823</div>
           <div className="text-accent-red font-bold">******</div>
-          <div><span className="text-accent-red font-bold">Email:</span> bundaumamtomvt1@gmail.com</div>
+          <div><span className="text-accent-red font-bold">Email:</span> bundauchubeo.official@gmail.com</div>
         </div>
       </div>
     </header>

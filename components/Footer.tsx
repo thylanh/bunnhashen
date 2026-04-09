@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="font-mono text-[#2b2b2b] text-sm md:text-[15px] font-semibold flex flex-col items-center lg:items-start text-center lg:text-left">
               <p><span className="text-[#a3381a] font-bold">Địa chỉ:</span> 54 Nơ Trang Long, phường Rạch Dừa, TP. Hồ Chí Minh</p>
               <p><span className="text-[#a3381a] font-bold">Điện thoại:</span> 0332215823</p>
-              <p><span className="text-[#a3381a] font-bold">Email:</span> bundaumamtomvt1.com</p>
+              <p><span className="text-[#a3381a] font-bold">Email:</span> bundauchubeo.official@gmail.com</p>
               <p><span className="text-[#a3381a] font-bold">Số chứng nhận đăng ký kinh doanh:</span> 01234456677</p>
               <p><span className="text-[#a3381a] font-bold">Ngày cấp:</span> 30/5/2026</p>
               <p><span className="text-[#a3381a] font-bold">Nơi cấp:</span> Sở kế hoạch & đầu tư TP.Hồ Chí Minh</p>
@@ -31,8 +31,8 @@ export default function Footer() {
               
               <div className="grid grid-cols-2 gap-x-2 gap-y-3 font-mono text-[#2b2b2b] text-sm md:text-[15px] font-semibold mb-8 lg:max-w-md xl:max-w-none text-left w-[300px] sm:w-[400px] lg:w-auto">
                   <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight">Trang chủ</Link>
-                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Cửa hàng</Link>
-                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight">Menu</Link>
+                  <Link href="/menu" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Cửa hàng</Link>
+                  <Link href="/#menu-section" className="hover:text-[#a3381a] transition-colors leading-tight">Menu</Link>
                   <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Tuyển dụng</Link>
                   <Link href="/#booking-section" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Đặt bàn</Link>
                   <div></div>

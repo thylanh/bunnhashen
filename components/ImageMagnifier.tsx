@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function ImageMagnifier({ 
   src, 
   alt, 
-  zoomLevel = 2 
+  zoomLevel = 2
 }: { 
   src: string; 
   alt: string; 
@@ -58,8 +58,8 @@ export default function ImageMagnifier({
             // Tính toán kích thước zoom
             backgroundSize: `${imgSize.width * zoomLevel}px ${imgSize.height * zoomLevel}px`,
             // Tính toán vị trí ảnh nền bên trong kính lúp
-            backgroundPositionX: `${-x * zoomLevel + magnifierSize / 2}px`,
-            backgroundPositionY: `${-y * zoomLevel + magnifierSize / 2}px`,
+            backgroundPositionX: `${-x * zoomLevel + magnifierSize / 3}px`,
+            backgroundPositionY: `${-y * zoomLevel + magnifierSize / 3}px`,
           }}
         />
       )}

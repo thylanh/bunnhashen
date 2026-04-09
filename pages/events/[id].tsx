@@ -57,11 +57,8 @@ export default function EventDetail() {
                   return (
                     <div key={idx} className="w-full flex flex-col gap-2">
                       <div className="w-full border-[3px] border-[#4a2e19] relative bg-black/10">
-                        <img src={block.value} alt={block.caption || event.title} className="w-full h-auto object-cover max-h-[600px]" />
+                        <img src={block.value} alt={event.title} className="w-full h-auto object-cover max-h-[600px]" />
                       </div>
-                      {block.caption && (
-                        <span className="text-[13px] font-mono opacity-80 italic tracking-wide">{block.caption}</span>
-                      )}
                     </div>
                   );
                 }
@@ -71,10 +68,10 @@ export default function EventDetail() {
 
             {/* Separator / Footer of article */}
             <div className="mt-12 pt-8 border-t border-[#4a2e19]/30 border-dashed">
-                <div className="font-mono text-xs md:text-sm space-y-2 text-[#4a2e19]/90 font-bold uppercase tracking-wider">
-                  <div>Hotline: <span className="text-[#a93c24]">0332.215.823</span></div>
-                  <div>Fanpage: <span className="text-[#a93c24]">https://fb.com/bundaumamtomvt1</span></div>
-                  <div>Website: <span className="text-[#a93c24]">bundaumamtomvt1.com</span></div>
+                <div className="font-mono text-xs md:text-sm space-y-2 text-[#4a2e19]/90 font-bold tracking-wider">
+                  <div>Hotline: <span className="text-[#a93c24]">0332215823</span></div>
+                  <div>Fanpage: <span className="text-[#a93c24]">https://www.facebook.com/bdcbvt</span></div>
+                  <div>Website: <span className="text-[#a93c24]">bundauchubeo.official@gmail.com</span></div>
                 </div>
                 
                 {/* Share Buttons */}

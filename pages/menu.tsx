@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import BookingSection from '../components/BookingSection';
 import BookingDialog from '../components/BookingDialog';
+import BookingSection from '../components/BookingSection';
 import { combos } from '../utils/data';
 
 export default function MenuPage() {

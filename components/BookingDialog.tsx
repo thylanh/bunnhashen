@@ -35,7 +35,7 @@ export default function BookingDialog({ isOpen, onClose, defaultItem }: BookingD
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 text-[#5E3B22] hover:text-[#A9442A] transition-colors p-1 bg-white/30 rounded-full border-2 border-transparent hover:border-[#5E3B22] hover:bg-white/70"
+          className="absolute top-2 right-2 z-20 text-[#5E3B22] hover:text-[#A9442A] transition-colors p-1 bg-white/30 rounded-full border-2 border-transparent hover:border-[#5E3B22] hover:bg-white/70"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>

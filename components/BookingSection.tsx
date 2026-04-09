@@ -103,7 +103,7 @@ export default function BookingSection({ defaultItem }: { defaultItem?: string }
             {/* The main dashed border container */}
             <div className="relative mx-auto border-x-2 border-b-2 border-dashed border-[#5e4d2f] pt-8 pb-8 px-6 md:px-12 md:mx-10" >
                 {/* Top border with Scissor and Title */}
-                <div className="absolute top-0 left-0 w-full flex items-center justify-center -mt-[25px] sm:-mt-[34px] lg:-mt-[42px] mt-12">
+                <div className="absolute top-0 left-0 w-full flex items-center justify-center -mt-[25px] sm:-mt-[34px] lg:-mt-[42px]">
                     <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] ml-2 sm:ml-6 md:ml-12"></div>
                     <div className="px-2 md:px-6 relative flex items-center group">
                         <h2 className="text-[#a3381a] font-black font-serif text-2xl sm:text-3xl lg:text-5xl uppercase tracking-wider text-shadow-sm whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>

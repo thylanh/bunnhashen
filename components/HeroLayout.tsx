@@ -19,11 +19,15 @@ export default function HeroLayout() {
           <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('/images/parchment.png')]"></div>
           <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-accent-red"></div>
           <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-accent-red"></div>
-          <div className="absolute top-4 left-4 w-4 h-4 bg-accent-red rounded-full"></div>
+          <div className="absolute top-6 left-6 w-4 h-4 bg-accent-red rounded-full animate-blink"></div>
 
-          <div className="text-white/50 font-bold tracking-widest">
-            [ VIDEO CHƯƠNG TRÌNH KHUYẾN MÃI ]
-          </div>
+           <video
+            className="w-full h-full object-cover"
+            src="/videos/vungtau.mp4"
+            autoPlay
+            muted
+            loop
+            controls/>
         </div>
 
         {/* Đặc sản Section */}
