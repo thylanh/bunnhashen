@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import BookingDialog from "../../components/BookingDialog";
 import BookingSection from "../../components/BookingSection";
 import ImageMagnifier from "../../components/ImageMagnifier";
-import { combos } from "../../utils/data";
+import { combos } from "../../utils/combos";
 
 export default function ProductDetail() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -20,7 +20,8 @@ export default function ProductDetail() {
 
   const checkScroll = () => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
     }
@@ -34,15 +35,23 @@ export default function ProductDetail() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 300;
-      scrollContainerRef.current.scrollBy({ left: -cardWidth - 24, behavior: 'smooth' });
+      const cardWidth =
+        scrollContainerRef.current.firstElementChild?.clientWidth || 300;
+      scrollContainerRef.current.scrollBy({
+        left: -cardWidth - 24,
+        behavior: "smooth",
+      });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstElementChild?.clientWidth || 300;
-      scrollContainerRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+      const cardWidth =
+        scrollContainerRef.current.firstElementChild?.clientWidth || 300;
+      scrollContainerRef.current.scrollBy({
+        left: cardWidth + 24,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -153,7 +162,7 @@ export default function ProductDetail() {
             <h2
               className="text-3xl md:text-4xl font-bold text-[#4a2e19] uppercase tracking-widest"
               style={{ fontFamily: "var(--font-heading)" }}>
-              Món Ăn Cùng Loại
+              Món Liên Quan
             </h2>
             <div className="flex items-center justify-center mt-4 gap-4">
               <div className="h-px bg-[#4a2e19] w-6 md:w-16"></div>
@@ -166,11 +175,20 @@ export default function ProductDetail() {
             {/* Left Button */}
             <button
               onClick={scrollLeft}
-              className={`absolute left-1 sm:-left-4 md:-left-6 top-[44%] lg:top-[48%] -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-[#e4ccaa] border-[2px] border-[#4a2e19] rounded-full items-center justify-center text-[#4a2e19] shadow-[2px_2px_0_rgba(62,39,35,0.3)] focus:outline-none transition-all duration-300 ${!canScrollLeft ? "hidden" : relatedProducts.length < 5 ? "hidden md:flex" : "flex"}`}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-               </svg>
+              className={`absolute left-1 sm:-left-4 md:-left-6 top-[44%] lg:top-[48%] -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-[#e4ccaa] border-[2px] border-[#4a2e19] rounded-full items-center justify-center text-[#4a2e19] shadow-[2px_2px_0_rgba(62,39,35,0.3)] focus:outline-none transition-all duration-300 ${!canScrollLeft ? "hidden" : relatedProducts.length < 5 ? "hidden md:flex" : "flex"}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
             </button>
 
             {/* Scroll Container */}
@@ -178,92 +196,105 @@ export default function ProductDetail() {
               ref={scrollContainerRef}
               onScroll={checkScroll}
               className="flex overflow-x-auto gap-4 md:gap-6 py-4 px-2 snap-x w-full hide-scrollbar"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}>
-            <style jsx>{`
-              .hide-scrollbar::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
-            {relatedProducts.map((combo) => (
-              <div
-                key={combo.id}
-                className="snap-start shrink-0 w-[80vw] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.125rem)]">
-                <Link
-                  href={`/menu/${combo.id}`}
-                  className="group block focus:outline-none h-full">
-                  <div className="border-[3px] border-[#5E3B22] p-1 bg-[#e4ccaa] relative shadow-[4px_4px_0_rgba(62,39,35,0.15)] flex flex-col h-full">
-                    {/* Product Image Area */}
-                    <div className="w-full aspect-[4/3] bg-black/5 relative overflow-hidden flex-shrink-0">
-                      <div className="absolute inset-0 bg-[#c5b092] flex items-center justify-center">
-                        <span className="text-[#5E3B22] opacity-30 font-bold uppercase tracking-widest text-sm">
-                          Hình Ảnh
+              style={{
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+                scrollBehavior: "smooth",
+              }}>
+              <style jsx>{`
+                .hide-scrollbar::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
+              {relatedProducts.map((combo) => (
+                <div
+                  key={combo.id}
+                  className="snap-start shrink-0 w-[80vw] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.125rem)]">
+                  <Link
+                    href={`/menu/${combo.id}`}
+                    className="group block focus:outline-none h-full">
+                    <div className="border-[3px] border-[#5E3B22] p-1 bg-[#e4ccaa] relative shadow-[4px_4px_0_rgba(62,39,35,0.15)] flex flex-col h-full">
+                      {/* Product Image Area */}
+                      <div className="w-full aspect-[4/3] bg-black/5 relative overflow-hidden flex-shrink-0">
+                        <div className="absolute inset-0 bg-[#c5b092] flex items-center justify-center">
+                          <span className="text-[#5E3B22] opacity-30 font-bold uppercase tracking-widest text-sm">
+                            Hình Ảnh
+                          </span>
+                        </div>
+                        <img
+                          src={combo.image}
+                          alt={combo.title}
+                          className="absolute inset-0 w-full h-full object-cover z-0"
+                        />
+                        <div className="absolute -bottom-[2px] left-0 right-0 w-full overflow-hidden leading-none z-10 block">
+                          <svg
+                            viewBox="0 0 1200 120"
+                            preserveAspectRatio="none"
+                            className="w-full h-4 md:h-5 text-[#e4ccaa]"
+                            fill="currentColor">
+                            <path d="M0,120 L0,60 Q150,0 300,60 T600,60 T900,60 T1200,60 L1200,120 Z" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* Price Circle Badge */}
+                      <div
+                        className="absolute right-[2%] top-[calc(55%_-_10px)] md:top-[calc(60%_-_20px)] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#A9442A] rounded-full flex flex-col items-center justify-center z-20 shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
+                        style={{ border: "2px solid #DFB58C" }}>
+                        <span
+                          className="text-[#FFEBB5] font-bold text-[8px] md:text-[9px] tracking-widest uppercase mb-0.5"
+                          style={{ fontFamily: "var(--font-sans)" }}>
+                          Giá
+                        </span>
+                        <span
+                          className="text-[#FFEBB5] font-bold text-xs md:text-sm leading-tight"
+                          style={{ fontFamily: "var(--font-heading)" }}>
+                          {combo.price}
                         </span>
                       </div>
-                      <img
-                        src={combo.image}
-                        alt={combo.title}
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                      />
-                      <div className="absolute -bottom-[2px] left-0 right-0 w-full overflow-hidden leading-none z-10 block">
-                        <svg
-                          viewBox="0 0 1200 120"
-                          preserveAspectRatio="none"
-                          className="w-full h-4 md:h-5 text-[#e4ccaa]"
-                          fill="currentColor">
-                          <path d="M0,120 L0,60 Q150,0 300,60 T600,60 T900,60 T1200,60 L1200,120 Z" />
-                        </svg>
+
+                      {/* Text / Details Area */}
+                      <div className="px-3 md:px-4 pt-4 pb-4 bg-[#e4ccaa] flex-1 flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-base font-bold text-[#3e2723] uppercase tracking-wide mr-12 line-clamp-2">
+                            {combo.title}
+                          </h3>
+                        </div>
+
+                        <div className="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setSelectedProduct(combo.title);
+                              setIsDialogOpen(true);
+                            }}
+                            className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[10px] md:text-[11px] shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]">
+                            Đặt món
+                          </button>
+                        </div>
                       </div>
                     </div>
-
-                    {/* Price Circle Badge */}
-                    <div
-                      className="absolute right-[2%] top-[calc(55%_-_10px)] md:top-[calc(60%_-_20px)] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#A9442A] rounded-full flex flex-col items-center justify-center z-20 shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
-                      style={{ border: "2px solid #DFB58C" }}>
-                      <span
-                        className="text-[#FFEBB5] font-bold text-[8px] md:text-[9px] tracking-widest uppercase mb-0.5"
-                        style={{ fontFamily: "var(--font-sans)" }}>
-                        Giá
-                      </span>
-                      <span
-                        className="text-[#FFEBB5] font-bold text-xs md:text-sm leading-tight"
-                        style={{ fontFamily: "var(--font-heading)" }}>
-                        {combo.price}
-                      </span>
-                    </div>
-
-                    {/* Text / Details Area */}
-                    <div className="px-3 md:px-4 pt-4 pb-4 bg-[#e4ccaa] flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-base font-bold text-[#3e2723] uppercase tracking-wide mr-12 line-clamp-2">
-                          {combo.title}
-                        </h3>
-                      </div>
-
-                      <div className="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setSelectedProduct(combo.title);
-                            setIsDialogOpen(true);
-                          }}
-                          className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[10px] md:text-[11px] shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]">
-                          Đặt món
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
 
             <button
               onClick={scrollRight}
-              className={`absolute right-1 sm:-right-4 md:-right-6 top-[44%] lg:top-[48%] -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-[#e4ccaa] border-[2px] border-[#4a2e19] rounded-full items-center justify-center text-[#4a2e19] shadow-[2px_2px_0_rgba(62,39,35,0.3)] focus:outline-none transition-all duration-300 ${!canScrollRight ? "hidden" : relatedProducts.length < 5 ? "hidden md:flex" : "flex"}`}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-               </svg>
+              className={`absolute right-1 sm:-right-4 md:-right-6 top-[44%] lg:top-[48%] -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-[#e4ccaa] border-[2px] border-[#4a2e19] rounded-full items-center justify-center text-[#4a2e19] shadow-[2px_2px_0_rgba(62,39,35,0.3)] focus:outline-none transition-all duration-300 ${!canScrollRight ? "hidden" : relatedProducts.length < 5 ? "hidden md:flex" : "flex"}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
             </button>
           </div>
         </div>

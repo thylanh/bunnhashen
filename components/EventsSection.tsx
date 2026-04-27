@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { events } from '../utils/data';
+import { events } from '../utils/events';
 
 export default function EventsSection() {
     return (

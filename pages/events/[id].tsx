@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import BookingSection from '../../components/BookingSection';
-import { events } from '../../utils/data';
+import { events } from '../../utils/events';
 
 export default function EventDetail() {
   const router = useRouter();
@@ -109,7 +109,7 @@ export default function EventDetail() {
                     <img src={related.thumbnail} alt={related.title} className="w-full h-auto aspect-video object-cover" />
                   </Link>
                   <div className="text-[10px] md:text-[11px] font-bold text-[#4a2e19]/70 tracking-widest uppercase mt-2 font-mono">
-                      {related.time} - {related.date}
+                      {related.date}
                   </div>
                   <Link href={`/events/${related.id}`} className="hover:text-[#a93c24] transition-colors">
                     <h3 className="text-sm font-bold uppercase leading-[1.3] font-sans text-[#4a2e19] line-clamp-3">
