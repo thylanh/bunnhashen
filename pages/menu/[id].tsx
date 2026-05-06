@@ -239,7 +239,7 @@ export default function ProductDetail() {
 
                       {/* Price Circle Badge */}
                       <div
-                        className="absolute right-[2%] top-[calc(55%_-_10px)] md:top-[calc(60%_-_20px)] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#A9442A] rounded-full flex flex-col items-center justify-center z-20 shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
+                        className="absolute right-[2%] top-[calc(75%_-_10px)] md:top-[calc(60%_-_20px)] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#A9442A] rounded-full flex flex-col items-center justify-center z-20 shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
                         style={{ border: "2px solid #DFB58C" }}>
                         <span
                           className="text-[#FFEBB5] font-bold text-[8px] md:text-[9px] tracking-widest uppercase mb-0.5"

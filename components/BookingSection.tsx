@@ -9,14 +9,14 @@ const AVAILABLE_ITEMS = [
   "Thập cẩm 2 người",
   "Đặc biệt 1 người",
   "Đặc biệt 2 người",
-  "Bún thêm",
-  "Đậu hũ thêm",
-  "Dồi sụn thêm",
-  "Thịt luộc thêm",
-  "Chả cốm thêm",
-  "Chả giò thêm",
-  "Nem chua rán thêm",
-  "Trà Tắc",
+  "Bún lá",
+  "Đậu hũ rán",
+  "Dồi sụn",
+  "Thịt luộc",
+  "Chả cốm",
+  "Chả giò",
+  "Nem chua rán",
+  "Trà tắc",
   "Nước mơ",
   "Nước sấu",
 ];
@@ -88,7 +88,7 @@ export default function BookingSection({
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_zwfjdkn",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_0i8bbrb",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_9g32ri7",
         templateParams,
         {
           publicKey:
