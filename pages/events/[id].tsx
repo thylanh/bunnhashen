@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import BookingSection from '../../components/BookingSection';
 import { events } from '../../utils/events';
 
 export default function EventDetail() {
@@ -127,11 +126,6 @@ export default function EventDetail() {
         </fieldset>
 
       </div>
-
-      <div className="mt-8 relative -mx-4 md:mx-0">
-        <BookingSection />
-      </div>
-
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import BookingDialog from "../components/BookingDialog";
-import BookingSection from "../components/BookingSection";
 import { combos } from "../utils/combos";
 
 export default function MenuPage() {
@@ -112,21 +110,9 @@ export default function MenuPage() {
                     <div className="text-[#3e2723] tracking-[0.2em] text-base font-bold">
                       *****
                     </div>
-                    {/* <p className="text-[#3e2723]/90 font-mono text-xs md:text-sm pr-10 md:pr-12 leading-relaxed line-clamp-3">
+                    <p className="text-[#3e2723]/90 font-mono text-xs md:text-sm pr-10 md:pr-12 leading-relaxed line-clamp-3">
                       {combo.desc}
-                    </p> */}
-                  </div>
-
-                  <div className="mt-8 flex justify-between items-end">
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setSelectedProduct(combo.title);
-                        setIsDialogOpen(true);
-                      }}
-                      className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[11px] md:text-xs shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]">
-                      Đặt món ngay
-                    </button>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -134,16 +120,6 @@ export default function MenuPage() {
           ))}
         </div>
       </section>
-
-      <div className="mt-8">
-        <BookingSection />
-      </div>
-
-      <BookingDialog
-        isOpen={isDialogOpen}
-        onClose={() => setIsDialogOpen(false)}
-        defaultItem={selectedProduct}
-      />
     </div>
   );
 }

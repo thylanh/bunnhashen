@@ -2,8 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import BookingDialog from "../../components/BookingDialog";
-import BookingSection from "../../components/BookingSection";
 import ImageMagnifier from "../../components/ImageMagnifier";
 import { combos } from "../../utils/combos";
 
@@ -132,22 +130,6 @@ export default function ProductDetail() {
             </div>
           </div>
 
-          {/* Button Row */}
-          <div className="mb-8 block">
-            <button
-              onClick={() => {
-                setSelectedProduct(product.title);
-                setIsDialogOpen(true);
-              }}
-              className="border-[3px] border-[#4a2e19] p-[2px] group focus:outline-none block w-max bg-[#e4ccaa]">
-              <div className="border-[1px] border-[#4a2e19] bg-[#d2a325] group-hover:bg-[#b88c1b] transition-colors h-10 md:h-11 px-5 flex items-center justify-center">
-                <span className="font-bold text-[#4a2e19] uppercase tracking-wider text-[13px] whitespace-nowrap">
-                  Đặt món ngay
-                </span>
-              </div>
-            </button>
-          </div>
-
           <div className="text-[#4a2e19]/80 font-mono text-sm border-t border-[#4a2e19]/20 pt-4 max-w-sm">
             <span className="opacity-80">Loại: </span>
             <span className="text-[#a93c24]">{product.category}</span>
@@ -260,18 +242,6 @@ export default function ProductDetail() {
                             {combo.title}
                           </h3>
                         </div>
-
-                        <div className="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setSelectedProduct(combo.title);
-                              setIsDialogOpen(true);
-                            }}
-                            className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[10px] md:text-[11px] shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]">
-                            Đặt món
-                          </button>
-                        </div>
                       </div>
                     </div>
                   </Link>
@@ -299,16 +269,6 @@ export default function ProductDetail() {
           </div>
         </div>
       )}
-
-      <div className="mt-12 md:mt-16 border-t-[3px] border-dashed border-[#5e3b22]/30 pt-8">
-        <BookingSection />
-      </div>
-
-      <BookingDialog
-        isOpen={isDialogOpen}
-        onClose={() => setIsDialogOpen(false)}
-        defaultItem={selectedProduct || product.title}
-      />
     </div>
   );
 }

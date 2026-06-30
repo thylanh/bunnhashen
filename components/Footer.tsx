@@ -52,7 +52,7 @@ export default function Footer() {
             className="w-full h-auto max-w-[500px] xl:max-w-[650px] object-contain drop-shadow-2xl hover:-rotate-40 transition-transform duration-500 cursor-pointer"
           />
         </div>
-
+        
       </div>
     </footer>
   );

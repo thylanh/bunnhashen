@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BookingSection from "../components/BookingSection";
 import EventsSection from "../components/EventsSection";
 import HeroLayout from "../components/HeroLayout";
 import { combos } from "../utils/combos";
@@ -55,7 +54,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <BookingSection />
     </div>
   );
 }
